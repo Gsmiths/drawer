@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="lib/jquery-3.2.1.slim.min.js"></script>
+    <script src="lib/p5.min.js"></script>
+    <script src="lib/p5.dom.js"></script>
+
+    <script src="sketch.js"></script>
+
+    <!-- add extra scripts below -->
+    <script src="toolbox.js"></script>
+    <script src="colourPalette.js"></script>
+    <script src="helperFunctions.js"></script>
+
+    <script src="freehandTool.js"></script>
+    <script src="lineToTool.js"></script>
+    <script src="sprayCanTool.js"></script>
+    <script src="mirrorDrawTool.js"></script>
+    <script src="eraserTool.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+  	<div class="wrapper">
+      <div class="box header">My Drawing App
+        <button id="clearButton">Clear</button>
+        <button id="saveImageButton">Save Image</button>
+        <!--  Add slider to adjust size of brush -->
+        Size: <input type="range" id="myRange" value="5" min="2">
+      </div>
+      <div class="box sidebar"></div>
+      <div id="content"></div>
+      <div class="box colourPalette"></div>
+      <div class="box options">
+        </div>
+	</div>
+      
+<script>
+    function sliderSize() {
+        var slideVal = document.getElementById("myRange").value;
+        console.log("Slider value = " && slideVal);
+        return slideVal;
+    }
+</script>
+  </body>
+</html>
