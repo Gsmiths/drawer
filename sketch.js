@@ -3,6 +3,7 @@
 var toolbox = null;
 var colourP = null;
 var helpers = null;
+var test;
 
 function setup() {
 
