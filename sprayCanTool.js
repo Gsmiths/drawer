@@ -7,7 +7,6 @@ function SprayCanTool(){
 	var spread = 10;
 
 	this.draw = function(){
-        stroke(0);
         // Sets stroke weight to value of slider
         strokeWeight(sliderSize());
 		var r = random(5,10);
@@ -16,5 +15,6 @@ function SprayCanTool(){
 				point(random(mouseX-spread, mouseX + spread), random(mouseY-spread, mouseY+spread));
 			}
 		}
+        loadPixels();
 	};
 }

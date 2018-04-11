@@ -26,8 +26,6 @@ function LineToTool(){
 				//update the screen with the saved pixels to hide any previous
 				//line between mouse pressed and released
 				updatePixels();
-				//draw the line
-                stroke(0);
                 // Sets stroke weight to value of slider
                 strokeWeight(sliderSize());
 				line(startMouseX, startMouseY, mouseX, mouseY);

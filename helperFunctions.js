@@ -1,5 +1,5 @@
 function HelperFunctions(){
-	
+	var undo = 0;
   //Jquery click events. Notice that there is no this. at the
   //start we don't need to do that here because the event will
   //be added to the button and doesn't 'belong' to the object
@@ -17,4 +17,23 @@ function HelperFunctions(){
   $("#saveImageButton").on("click", function(){
     saveCanvas("myPicture", "jpg");
   });
+    
+    //event handler for the save image button. saves the canvsa to the
+  //local file system.
+  $("#undoButton").on("click", function(){
+    undo = 1;
+    console.log(undo);
+    undo = 0;
+    console.log(undo);
+  });
 }
+
+//Returns slider value for adjusting brush size
+function sliderSize() {
+    var slideVal = document.getElementById("myRange").value;
+    console.log("Slider value = " && slideVal);
+    return slideVal;
+}
+
+
+
