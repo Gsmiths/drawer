@@ -1,9 +1,21 @@
 //global variables that will store the toolbox colour palette
-//amnd the helper functions
+//and the helper functions
 var toolbox = null;
 var colourP = null;
 var helpers = null;
+<<<<<<< HEAD
 var test;
+=======
+var userImg;
+
+//function preload(){
+//    userImg= loadImage("document.getElementsByTagName('img')[document.getElementsByTagName('img').length - 1].src");
+//}
+
+var img_array = document.getElementsByTagName('img');
+    
+    var last_element = document.getElementsByTagName('img')[document.getElementsByTagName('img').length - 1];
+>>>>>>> 729881a8423ed2de9fbb89138d0929f803655350
 
 function setup() {
 
@@ -11,6 +23,7 @@ function setup() {
     canvasContainer = $('#content');
     var c = createCanvas(canvasContainer.innerWidth(), canvasContainer.innerHeight());
     c.parent("content");
+    
 
    //create helper functions and the colour palette
     helpers = new HelperFunctions();
@@ -21,12 +34,32 @@ function setup() {
     
     //add the tools to the toolbox. 
     toolbox.addTool(new FreehandTool());
+    toolbox.addTool(new newhandTool());
     toolbox.addTool(new LineToTool());
     toolbox.addTool(new SprayCanTool());
     toolbox.addTool(new mirrorDrawTool());
     toolbox.addTool(new EraserTool());
+    toolbox.addTool(new TextTool());
+    toolbox.addTool(new BlurTool());
     background(255);
     
+//    image(userImg, 0, 0);
+    
+// Create image select button 
+var fileSelect = createFileInput(fileSelected);
+
+function fileSelected(file){
+    var img = createImg(file.data);
+//    image(img, 0, 0);
+}
+    
+//    Move image input button to top of page by assigning ID
+    var imgUp = document.getElementsByTagName('input')[2];
+    document.getElementById("imageOptions").appendChild(imgUp);
+    
+    
+//    var lastPic = document.getElementsByTagName('img')[document.getElementsByTagName('img').length - 1];
+//    document.getElementById("content").appendChild(lastPic);
 }
 
 function draw() {

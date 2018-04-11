@@ -59,7 +59,7 @@ html, body {
 		display: grid;
 		height: 100%;
 		grid-template-columns: 70px 230px  minmax(500px, 1fr);
-		grid-template-rows: 35px minmax(500px, 1fr) 160px;
+		grid-template-rows: 60px minmax(500px, 1fr) 160px;
 		grid-template-areas:
                "header header header"
 				"sidebar content content"
@@ -67,6 +67,27 @@ html, body {
 		background-color: #fff;
 		color: #444;
 	}
+
+/* Text function styling */
+#boldButton{
+    font-weight: bold;
+}
+
+#italicButton{
+    font-style: italic;
+}
+
+#textForm{
+    display: inline;
+}
+
+/*
+#textBox {
+    font-family: ;
+
+}
+*/
+
 .box {
   background-color: #444;
   color: #fff;
@@ -75,4 +96,8 @@ html, body {
 
 .header {
   background-color: #999;
+    display: inline-flex;
 }
+
+
+
