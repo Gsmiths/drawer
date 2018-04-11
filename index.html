@@ -4,7 +4,7 @@
     <script src="lib/jquery-3.2.1.slim.min.js"></script>
     <script src="lib/p5.min.js"></script>
     <script src="lib/p5.dom.js"></script>
-
+    
     <script src="sketch.js"></script>
 
     <!-- add extra scripts below -->
@@ -13,34 +13,78 @@
     <script src="helperFunctions.js"></script>
 
     <script src="freehandTool.js"></script>
+    <script src="newhandTool.js"></script>
     <script src="lineToTool.js"></script>
     <script src="sprayCanTool.js"></script>
     <script src="mirrorDrawTool.js"></script>
     <script src="eraserTool.js"></script>
+    <script src="textTool.js"></script>
+    <script src="blurTool.js"></script>
+          
 
     <link rel="stylesheet" type="text/css" href="style.css">
+    
   </head>
   <body>
   	<div class="wrapper">
       <div class="box header">My Drawing App
         <button id="clearButton">Clear</button>
-        <button id="saveImageButton">Save Image</button>
+        <button id="undoButton">Undo</button>
+          <div id="imageOptions"><button id="saveImageButton">Save Image</button></div>
+          
         <!--  Add slider to adjust size of brush -->
         Size: <input type="range" id="myRange" value="5" min="2">
+        <!-- Form to add text -->
+        <div  id = "textForm">
+            <form onkeypress="return event.keyCode != 13">
+                Enter text: <input type="text" id = "textBox">
+                <button type="button" onclick="return getText()">Submit</button>
+                <button type = "button" id="boldButton" onclick="boldText()">B</button>
+                <button type="button" id="italicButton" onclick="italicText()">I</button>
+            </form>
+            <form>
+                <select id="textPick" name="font">
+                    <option value="Andale Mono">Andale Mono</option>
+                    <option value="Arial">Arial</option>
+                    <option value="Arial Black">Arial Black</option>
+                    <option value="Arial Narrow">Arial Narrow</option>
+                    <option value="Arial Rounded MT Bold">Arial Rounded MT Bold</option>
+                    <option value="Bodoni MT">Bodoni MT</option>
+                    <option value="Book Antiqua">Book Antiqua</option>
+                    <option value="Brush Script MT">Brush Script MT</option>
+                    <option value="Calibri">Calibri</option>
+                    <option value="Calisto MT">Calisto MT</option>
+                    <option value="Candara">Candara</option>
+                    <option value="Century Gothic">Century Gothic</option>
+                    <option value="Consolas">Consolas</option>
+                    <option value="Copperplate">Copperplate</option>
+                    <option value="Courier New">Courier New</option>
+                    <option value="Didot">Didot</option>
+                    <option value="Franklin Gothic Medium">Franklin Gothic Medium</option>
+                    <option value="Futura">Futura</option>
+                    <option value="Garamond">Garamond</option>
+                    <option value="Geneva">Geneva</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Gill Sans">Gill Sans</option>
+                    <option value="Goudy Old Style">Goudy Old Style</option>
+                    <option value="Helvetica">Helvetica</option>
+                    <option value="Hoefler Text">Hoefler Text</option>
+                    <option value="Impact">Impact</option>
+                    <option value="Lucida Bright">Lucida Bright</option>
+                    <option value="Lucida Console">Lucida Console</option>
+                    <option value="Arial">Arial</option>
+                </select>
+            </form>
+        </div>
       </div>
       <div class="box sidebar"></div>
-      <div id="content"></div>
+      <div id="content">
+</div>
       <div class="box colourPalette"></div>
       <div class="box options">
         </div>
 	</div>
-      
-<script>
-    function sliderSize() {
-        var slideVal = document.getElementById("myRange").value;
-        console.log("Slider value = " && slideVal);
-        return slideVal;
-    }
-</script>
+    
   </body>
+
 </html>
