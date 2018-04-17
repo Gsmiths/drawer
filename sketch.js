@@ -3,9 +3,6 @@
 var toolbox = null;
 var colourP = null;
 var helpers = null;
-<<<<<<< HEAD
-var test;
-=======
 var userImg;
 
 //function preload(){
@@ -13,9 +10,8 @@ var userImg;
 //}
 
 var img_array = document.getElementsByTagName('img');
-    
+
     var last_element = document.getElementsByTagName('img')[document.getElementsByTagName('img').length - 1];
->>>>>>> 729881a8423ed2de9fbb89138d0929f803655350
 
 function setup() {
 
@@ -23,16 +19,16 @@ function setup() {
     canvasContainer = $('#content');
     var c = createCanvas(canvasContainer.innerWidth(), canvasContainer.innerHeight());
     c.parent("content");
-    
+
 
    //create helper functions and the colour palette
     helpers = new HelperFunctions();
     colourP = new ColourPalette();
-    
+
     //create a toolbox for storing the tools
     toolbox = new Toolbox();
-    
-    //add the tools to the toolbox. 
+
+    //add the tools to the toolbox.
     toolbox.addTool(new FreehandTool());
     toolbox.addTool(new newhandTool());
     toolbox.addTool(new LineToTool());
@@ -42,22 +38,22 @@ function setup() {
     toolbox.addTool(new TextTool());
     toolbox.addTool(new BlurTool());
     background(255);
-    
+
 //    image(userImg, 0, 0);
-    
-// Create image select button 
+
+// Create image select button
 var fileSelect = createFileInput(fileSelected);
 
 function fileSelected(file){
     var img = createImg(file.data);
 //    image(img, 0, 0);
 }
-    
+
 //    Move image input button to top of page by assigning ID
     var imgUp = document.getElementsByTagName('input')[2];
     document.getElementById("imageOptions").appendChild(imgUp);
-    
-    
+
+
 //    var lastPic = document.getElementsByTagName('img')[document.getElementsByTagName('img').length - 1];
 //    document.getElementById("content").appendChild(lastPic);
 }
@@ -67,7 +63,7 @@ function draw() {
     //hasOwnProperty is a javascript function that tests
     //if an object contains a particular method or property
     //if there isn't a draw method the app will alert the user
-	if(toolbox.selectedTool.hasOwnProperty("draw")){   
+	if(toolbox.selectedTool.hasOwnProperty("draw")){
     	toolbox.selectedTool.draw();
 	}
 	else{
